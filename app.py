@@ -102,7 +102,8 @@ def view_pdf(note_id):
     pdf_path = f"/static/pdfjs/web/viewer.html?file=/pdfs/{PDFS[note_id]['file']}"
     return redirect(pdf_path)
 
+
 if __name__ == "__main__":
     if not os.path.exists("pdfs"):
         os.mkdir("pdfs")
-    app.run(debug=True)
+    app.run(debug=True, host='0.0.0.0', port=int(os.environ.get("PORT", 10000)))
