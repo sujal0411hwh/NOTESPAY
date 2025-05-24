@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: notespay
+    env: python
+    region: oregon
+    plan: free
+    buildCommand: ""
+    startCommand: python app.py
+    envVars:
+      - key: FLASK_ENV
+        value: production
+      - key: RAZORPAY_KEY_ID
+        value: rzp_test_gVWdLx7ItKTWZ0
+      - key: RAZORPAY_SECRET
+        value: qIpkzzkFBWvHPhDq6mIOM5U9
+      - key: SECRET_KEY
+        value: a_secure_flask_key_for_sessions
